@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TALLER4-AREP" />
+        <module name="Taller4-AREP" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,7 +1,7 @@
 package edu.escuelaing.arem.app.webApps;
 
-import edu.escuelaing.arem.app.services.*;
-import edu.escuelaing.arem.app.httpServer;
+
+import edu.escuelaing.arem.app.HttpServer;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -13,7 +13,7 @@ public class FirstApp {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException, ClassNotFoundException, InvocationTargetException, IllegalAccessException {
-        httpServer server = httpServer.getInstance();
+        HttpServer server = HttpServer.getInstance();
        /* server.addServices("/index", new ServiceHtml());
         server.addServices("/estilos", new ServiceCSS());
         server.addServices("/javaScript", new ServiceJS());
