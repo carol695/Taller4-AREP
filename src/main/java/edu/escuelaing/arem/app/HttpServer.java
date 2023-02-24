@@ -2,6 +2,7 @@ package edu.escuelaing.arem.app;
 
 import edu.escuelaing.arem.app.controller.RequestMapping;
 import edu.escuelaing.arem.app.controller.SpringBoot;
+import org.json.JSONTokener;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
@@ -24,11 +25,13 @@ public class HttpServer {
 
         SpringBoot spring = new SpringBoot();
         ArrayList<String> classes = spring.getClassComponent(new ArrayList<>(), ".");
+        System.out.println(classes);
         for (String className: classes) {
             Class c = Class.forName(className);
             for (Method m: c.getMethods()) {
                 if (m.isAnnotationPresent(RequestMapping.class)){
                     methods.put(m.getAnnotation(RequestMapping.class).value(), m);
+                    System.out.println("--------");
                 }
             }
         }
@@ -74,6 +77,7 @@ public class HttpServer {
                     if (methods.containsKey(request)) {
                         outputLine = (String) methods.get(request).invoke(null);
                     } else {
+                        System.out.println(methods);
                         outputLine = (String) methods.get("404").invoke(null);
                     }
                 } catch (IllegalAccessException | InvocationTargetException e) {
