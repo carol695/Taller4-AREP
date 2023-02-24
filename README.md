@@ -69,5 +69,3 @@ Para definir el versionamiento se pudo observar los tags del repositorio, y el v
 Hacemos uso del patron singleton para crear una sola instancia del servidor y una sola instancia de StaticFiles, además se usa anotaciones @Component y @RequestMapping, el @Component esta en las clases las cuales se escanearan por el HTTP server y guardara en una coleccion llave-valor las respuestas que debe dar el servidor web.
 
 
-
-https://github.com/carol695/Taller4-AREP.git
